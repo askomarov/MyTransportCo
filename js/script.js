@@ -125,7 +125,33 @@ $(document).ready(function () {
       $('.icon-menu, .header-menu').toggleClass('_active');
       $('body').toggleClass('lock');
    })
-});;
+});
+
+
+//=====затемнение фона hedera
+let header = document.querySelector('.header__top');  /*нашли хедер*/
+let scrollPrev = 0;
+$(window).scroll(function () {
+   var scrolled = $(window).scrollTop();
+
+   if (scrolled > 100 && scrolled > scrollPrev) {
+      header.classList.add('out');
+   } else {
+      header.classList.remove('out');
+   }
+   scrollPrev = scrolled;
+});
+
+window.onscroll = function () {            /*функция при прокручивании*/
+   if (window.pageYOffset > 100) {				/* если прокрутил больше чем на 200px*/
+      header.classList.add('dark');		/*добавялется класс нашему меню и оно затемняется*/
+   } else {
+      header.classList.remove('dark'); /* если меньше то класс удаляется*/
+   }
+};
+// upButton.onclick = function () {
+//    window.scrollTo(0, 0);  		/*при нажатии на кпноку прокрутить в начало координат*/
+// };;
 // Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),position(digi),when(breakpoint)"
 // e.x. data-da="item,2,992"

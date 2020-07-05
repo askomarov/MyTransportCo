@@ -249,6 +249,8 @@ body.lock {
 .header__main {
   height: 4.16667vw;
   min-height: 60px;
+  width: 100%;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,7 +258,10 @@ body.lock {
       -ms-flex-align: center;
           align-items: center;
   background: transparent;
-  position: relative;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header__logo {
@@ -300,7 +305,9 @@ body.lock {
 }
 
 .top-header {
-  position: relative;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
   padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -311,7 +318,7 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid #625e5ea1;
   background: #76a5ff;
 }
 
@@ -377,8 +384,18 @@ body.lock {
 
 .header-menu__link {
   padding: 5px 15px;
-  font-size: clamp(20px, 3vw, 36px);
+  font-size: clamp(20px, 3vw, 24px);
   color: #22356f;
+}
+
+.dark {
+  background: #76a5ffc9;
+}
+
+.out {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .icon-menu._active span {
@@ -435,6 +452,36 @@ img {
   position: relative;
 }
 
+.hero .container {
+  position: relative;
+}
+
+.hero__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+}
+
+.hero__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  max-width: 350px;
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 1px;
+}
+
 @media (max-width: 1182px) {
   .container {
     max-width: 970px;
@@ -451,12 +498,6 @@ img {
   .container {
     max-width: none;
     padding: 0 10px;
-  }
-
-  .header__main {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 
   .header__logo {
@@ -485,6 +526,14 @@ img {
 }
 
 @media (max-width: 650px) {
+  .header__main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 0;
+    min-height: 0;
+  }
+
   .top-header {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -503,8 +552,8 @@ img {
   .header-menu {
     opacity: 0;
     visibility: hidden;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 72.5px;
     left: 0;
   }
 
@@ -548,6 +597,7 @@ img {
   .icon-menu {
     position: relative;
     width: 30px;
+    margin: 0 15px;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 30px;
             flex: 0 0 30px;
