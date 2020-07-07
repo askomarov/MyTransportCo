@@ -705,7 +705,7 @@ img {
         -ms-flex-align: center;
             align-items: center;
     overflow-y: scroll;
-    height: auto;
+    height: 100%;
   }
 
   .header-menu__ul li {
