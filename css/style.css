@@ -705,9 +705,11 @@ img {
         -ms-flex-align: center;
             align-items: center;
     overflow-y: scroll;
+    height: auto;
   }
 
   .header-menu__ul li {
+    height: auto;
     margin: 10px 0;
   }
 
