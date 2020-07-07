@@ -122,7 +122,7 @@
 
 $(document).ready(function () {
    $('.icon-menu').click(function (event) {
-      $('.icon-menu, .header-menu').toggleClass('_active');
+      $('.icon-menu, .header-menu, .top-header').toggleClass('_active');
       $('body').toggleClass('lock');
    })
 });
@@ -343,5 +343,8 @@ $(document).ready(function () {
       infinite: true,
       variableWidth: false,
       autoplay:true,
+      speed:2000, 		 //1000ms - 1 секунда
+      easing:'ease', 		//тип анимации
+      fade:true,
    })
 })
