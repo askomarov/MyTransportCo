@@ -371,9 +371,9 @@ $(document).ready(function () {
 });;
 
 //загрузочное приветствие
-// $(document).ready(function () {
-//    $('.wrapper, .hello').addClass('loaded')
-// })
+$(document).ready(function () {
+   $('.wrapper, .hello').addClass('loaded')
+})
 
 $(document).ready(function () {
    $('.slider').slick({
