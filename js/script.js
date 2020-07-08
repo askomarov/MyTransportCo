@@ -370,11 +370,40 @@ $(document).ready(function () {
    });
 });;
 
+// //загрузочное приветствие
+// $(document).ready(function () {
+//    $('.wrapper, .hello').addClass('loaded')
+// })
+
 //загрузочное приветствие
 $(document).ready(function () {
-   $('.wrapper, .hello').addClass('loaded')
+   setTimeout(function () {
+      $('.wrapper, .hello').addClass('loaded')
+      $('body').removeClass('lock')
+   }, 3000); //задержка действия функции
 })
 
+//эффект печатания  
+$(function () {
+   var $text = $('#box').text();  // откуда берем текст, лучше задать display:none;
+   var $count = 0;
+   var $maxspeed = 300;
+
+   function character(start, end, text) {
+      return text.substring(start, end);
+   }
+
+   function type() {
+      var $random = Math.floor(Math.random() * $maxspeed);
+      setTimeout(type, $random);
+      $('.hello').append(character($count, $count + 1, $text));  //куда выводим текст
+      $count++;
+   }
+   type();
+});
+
+
+//слайдер
 $(document).ready(function () {
    $('.slider').slick({
       arrows: false, 		// стрелочки - видно или нет
