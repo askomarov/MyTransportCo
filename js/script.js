@@ -40,7 +40,7 @@ $(window).scroll(function () {
 });
 
 window.onscroll = function () {            /*функция при прокручивании*/
-   if (window.pageYOffset > 30) {				/* если прокрутил больше чем на 200px*/
+   if (window.pageYOffset > 30) {				/* если прокрутил больше чем на 30px*/
       header.classList.add('dark');		/*добавялется класс нашему меню и оно затемняется*/
    } else {
       header.classList.remove('dark'); /* если меньше то класс удаляется*/
@@ -365,6 +365,28 @@ $(document).ready(function () {
          }
          else {
             self.removeClass('magic-apears');
+         }
+      });
+   });
+});
+
+$(document).ready(function () {
+   var windowHeight = $(window).height();
+
+   $(document).on('scroll', function () {
+      $('.footer').each(function () {
+         var self = $(this),
+            height;
+         if (self.height() >= windowHeight) {
+            height = self.offset().top + windowHeight - 100;
+         } else {
+            height = self.offset().top + self.height();
+         }
+         if ($(document).scrollTop() + windowHeight >= height) {
+            $('.actions-header').addClass('_moveDown')
+         }
+         else {
+            $('.actions-header').removeClass('_moveDown');
          }
       });
    });

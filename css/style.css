@@ -143,6 +143,7 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   z-index: 50;
   font-size: 20vh;
   color: #87b8d0bd;
@@ -479,6 +480,10 @@ body.lock {
 .actions-header__link:hover svg,
 .actions-header__link:active svg {
   fill: lightblue;
+}
+
+.actions-header._moveDown {
+  bottom: 70px;
 }
 
 .dark {
@@ -995,6 +1000,76 @@ input {
           transform: translateX(0);
 }
 
+.footer {
+  height: 70px;
+  padding: 10px 0;
+  background: black;
+}
+
+.social-menu {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.social-menu .social-list {
+  width: 60px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-menu .social-link {
+  position: relative;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: -webkit-transform .5s ease 0s;
+  transition: -webkit-transform .5s ease 0s;
+  -o-transition: transform .5s ease 0s;
+  transition: transform .5s ease 0s;
+  transition: transform .5s ease 0s, -webkit-transform .5s ease 0s;
+}
+
+.social-menu .social-link:active {
+  -webkit-transform: scale(10);
+      -ms-transform: scale(10);
+          transform: scale(10);
+  width: 100%;
+  height: 100%;
+}
+
+.social-menu .social-link svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  fill: white;
+}
+
+.social-menu .social-link:hover svg,
+.social-menu .social-link:active svg,
+.social-menu .social-link:focus svg {
+  fill: red;
+}
+
 .magic {
   opacity: 0;
   visibility: hidden;
@@ -1132,13 +1207,29 @@ input {
     height: 100%;
     width: 100%;
     padding-top: 90px;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s ease 0s;
+    transition: -webkit-transform 0.5s ease 0s;
+    -o-transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
   }
 
   .header-menu._active {
     opacity: 1;
     visibility: visible;
     overflow-y: scroll;
-    background: #25eaabbd;
+    background: #25eaab;
+    -webkit-transition: -webkit-transform 0.5s ease 0s;
+    transition: -webkit-transform 0.5s ease 0s;
+    -o-transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
   }
 
   .header-menu._active .btn {
@@ -1193,6 +1284,12 @@ input {
         justify-content: space-around;
   }
 
+  .actions-header__list {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+  }
+
   .actions-header__link {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1203,6 +1300,7 @@ input {
   .actions-header__link p {
     font-size: 9px;
     text-transform: uppercase;
+    text-align: center;
   }
 
   .actions-header__link svg {
