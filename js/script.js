@@ -348,7 +348,27 @@ document.addEventListener('keydown', function (e) {
 	}
 })();
 ;
+$(document).ready(function () {
+   var windowHeight = $(window).height();
 
+   $(document).on('scroll', function () {
+      $('.magic').each(function () {
+         var self = $(this),
+            height;
+         if (self.height() >= windowHeight) {
+            height = self.offset().top + windowHeight - 100;
+         } else {
+            height = self.offset().top + self.height();
+         }
+         if ($(document).scrollTop() + windowHeight >= height) {
+            self.addClass('magic-apears')
+         }
+         else {
+            self.removeClass('magic-apears');
+         }
+      });
+   });
+});;
 
 //загрузочное приветствие
 // $(document).ready(function () {
