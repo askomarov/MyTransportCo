@@ -378,7 +378,7 @@ $(document).ready(function () {
          var self = $(this),
             height;
          if (self.height() >= windowHeight) {
-            height = self.offset().top + windowHeight - 100;
+            height = self.offset().top + windowHeight + 120;
          } else {
             height = self.offset().top + self.height();
          }
