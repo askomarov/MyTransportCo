@@ -621,6 +621,10 @@ img {
           box-shadow: 0px 0px 4px 0px black;
 }
 
+.hero__body {
+  padding-top: 120px;
+}
+
 .popup-calc {
   position: fixed;
   z-index: 150;
@@ -894,8 +898,10 @@ input {
 }
 
 .work__grid {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  -ms-grid-rows: minmax(100px, auto);
   grid-template-rows: minmax(100px, auto);
   gap: 10px;
   text-align: center;
@@ -964,9 +970,11 @@ input {
 }
 
 .features__grid {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
+  -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
 }
 
@@ -999,6 +1007,14 @@ input {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+}
+
+.features__bgImg {
+  width: 100%;
+  height: 300px;
+  background: url("../img/roadBG.jpg") center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .footer {
@@ -1377,3 +1393,5 @@ input {
     margin-top: 10px;
   }
 }
+
+.webp .features__bgImg { background: url(../img/roadBG.webp) center no-repeat; }
