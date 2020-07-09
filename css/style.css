@@ -332,26 +332,18 @@ body.lock {
 
 .top-header__logo {
   overflow: hidden;
-  border-radius: 10px;
-  background: lightblue;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 105px;
-          flex: 0 0 105px;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
 }
 
 .top-header__logo svg {
-  -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-animation: moveLogo 2s linear 2s backwards;
-          animation: moveLogo 2s linear 2s backwards;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
+  width: 100%;
+  height: 100%;
 }
 
 .top-header__logo p {
   color: white;
-  padding: 0px 5px 5px;
   font-weight: 900;
 }
 
@@ -554,6 +546,42 @@ img {
   position: relative;
 }
 
+.slick-slider .slick-dots {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: 5%;
+}
+
+.slick-slider .slick-dots li {
+  margin-right: 10px;
+}
+
+.slick-slider .slick-dots li:last-child {
+  margin-right: 0;
+}
+
+.slick-slider .slick-dots li button {
+  font-size: 0;
+  background-color: #ffffff63;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid lightblue;
+}
+
+.slick-slider .slick-dots li.slick-active button {
+  background-color: #76a5ff;
+}
+
 .hero .container {
   position: relative;
   max-width: 100%;
@@ -573,6 +601,7 @@ img {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 10px;
+  margin-left: 50px;
 }
 
 .hero__content {
@@ -1177,6 +1206,7 @@ input {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-left: 0;
   }
 
   .hero__content {
@@ -1188,6 +1218,10 @@ input {
 
   .features {
     padding: 20px 10px 10px;
+  }
+
+  .features__bgImg {
+    display: none;
   }
 }
 
